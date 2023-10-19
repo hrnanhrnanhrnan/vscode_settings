@@ -1,0 +1,56 @@
+{
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.showSlider": "always",
+  "workbench.iconTheme": "material-icon-theme",
+  "gitlens.gitCommands.skipConfirmations": ["fetch:command", "switch:command"],
+  "vim.handleKeys": {
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-p>": false,
+    "<C-k>": false,
+    "<C-a>": false,
+    "<C-w>": false,
+    "<C-f>": false,
+    "<C-y>": false,
+    "<C-t>": false
+  },
+  "vim.leader": "<Space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+        "before": ["<leader>", "k"],
+        "commands": ["workbench.action.navigateForward"]
+    },
+    {
+        "before": ["<leader>", "j"],
+        "commands": ["workbench.action.navigateBack"]
+    },
+    {
+        "before": ["<leader>", "d"],
+        "commands": ["editor.action.revealDefinition"]
+    },
+    {
+        "before": ["<leader>", "i"],
+        "commands": ["editor.action.goToImplementation"]
+    },
+    {
+        "before": ["<leader>", "r"],
+        "commands": ["editor.action.goToReferences"]
+    },
+],
+"vim.visualModeKeyBindingsNonRecursive": [
+    {
+        "before": ["<leader>", "f"],
+        "commands": ["editor.action.formatSelection"]
+    },
+],
+  "glassit.alpha": 250,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vim.cursorStylePerMode.visual": "underline-thin",
+    "vim.cursorStylePerMode.insert": "line-thin",
+  "terminal.integrated.env.windows": {},
+  "console-ninja.featureSet": "Community",
+  "workbench.colorTheme": "Default Dark Modern",
+  "terminal.integrated.defaultProfile.windows": "Git Bash"
+}
