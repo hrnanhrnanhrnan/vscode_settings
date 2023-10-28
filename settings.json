@@ -2,8 +2,10 @@
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
   "editor.minimap.showSlider": "always",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-icons",
   "gitlens.gitCommands.skipConfirmations": ["fetch:command", "switch:command"],
+  "editor.autoSurround": "languageDefined",
+  "editor.inlayHints.enabled": "on",
   "vim.handleKeys": {
     "<C-c>": false,
     "<C-v>": false,
@@ -14,19 +16,28 @@
     "<C-w>": false,
     "<C-f>": false,
     "<C-y>": false,
-    "<C-t>": false
+    "<C-t>": false,
+    "<C-e>": false,
+    "<C-o>": false,
   },
   "vim.leader": "<Space>",
+  "vim.scroll": 0,
+  "vim.easymotion": true,
+  "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
+  "vim.easymotionMarkerFontWeight": "bold",
+  "vim.statusBarColors.easymotioninputmode": "#ff0000",
+  "vim.statusBarColors.easymotionmode": "#ff0000",
   "vim.normalModeKeyBindingsNonRecursive": [
+    // EDITOR COMMANDS
     {
-        "before": ["<leader>", "k"],
+        "before": ["<leader>", "l"],
         "commands": ["workbench.action.navigateForward"]
     },
     {
-        "before": ["<leader>", "j"],
+        "before": ["<leader>", "h"],
         "commands": ["workbench.action.navigateBack"]
     },
-    {
+    { 
         "before": ["<leader>", "d"],
         "commands": ["editor.action.revealDefinition"]
     },
@@ -38,19 +49,109 @@
         "before": ["<leader>", "r"],
         "commands": ["editor.action.goToReferences"]
     },
-],
-"vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "j"],
+      "after": ["<C-d>"], 
+      "commands": [
+       {
+          "command": "vim.execute",
+          "args": [":normal! zz"] 
+        }
+      ],
+    },
+    {
+      "before": ["<leader>", "k"],
+      "after": ["<C-u>"], 
+      "commands": [
+        {
+          "command": "vim.execute",
+          "args": [":normal! zz"] 
+        }
+      ],
+    },
+    {
+      "before": ["<leader>", "b"],
+      "after": ["0"], 
+    },
+    {
+      "before": ["<leader>", "e"],
+      "after": ["$"], 
+    },
+    {
+        "before": ["<leader>", "s"],
+        "commands": ["editor.action.triggerSuggest"]
+    },
+    // {
+    //     "before": ["<leader>", "s"],
+    //     "commands": ["editor.action.inlineSuggest.trigger"]
+    // },
+    {
+        "before": ["<leader>", "p"],
+        "commands": ["editor.action.triggerParameterHints"]
+    },
+    {
+        "before": ["<leader>", "o"],
+        "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+        "before": ["<leader>", "/"],
+        "commands": ["editor.action.jumpToBracket"]
+    },
+    {
+        "before": ["<leader>", "c"],
+        "commands": ["editor.showCallHierarchy"]
+    },
+    {
+      "before": ["<CR>"],
+      "after": ["o", "<Esc>"], 
+    },
+
+    // COMMANDS COMMANDS
+    {
+        "before": ["<leader>", ";"],
+        "commands": ["workbench.action.showCommands"]
+    },
     {
         "before": ["<leader>", "f"],
-        "commands": ["editor.action.formatSelection"]
+        "commands": ["workbench.action.quickOpen"]
     },
+    // {
+    //     "before": ["<leader>", "e"],
+    //     "commands": ["workbench.action.focusFirstEditorGroup"]
+    // },
+    // {
+    //     "before": ["<leader>", "v"],
+    //     "commands": ["workbench.action.focusSideBar"]
+    // },
+    {
+        "before": ["<leader>", "t"],
+        "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+        "before": ["<leader>", "d"],
+        "commands": ["workbench.action.debug.callStackDown"]
+    },
+    {
+        "before": ["<leader>", "u"],
+        "commands": ["workbench.action.debug.callStackUp"]
+    },
+],
+
+"vim.visualModeKeyBindingsNonRecursive": [
+  {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatSelection"]
+  },
 ],
   "glassit.alpha": 250,
   "diffEditor.ignoreTrimWhitespace": false,
   "vim.cursorStylePerMode.visual": "underline-thin",
-    "vim.cursorStylePerMode.insert": "line-thin",
+  "vim.cursorStylePerMode.insert": "line-thin",
   "terminal.integrated.env.windows": {},
   "console-ninja.featureSet": "Community",
   "workbench.colorTheme": "Default Dark Modern",
-  "terminal.integrated.defaultProfile.windows": "Git Bash"
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+  }
 }
