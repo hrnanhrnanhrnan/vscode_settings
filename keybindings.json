@@ -99,4 +99,14 @@
         "command": "editor.action.moveLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
     },
+    {
+        "key": "shift+j",
+        "command": "multiCommand.pageDownAndCenter",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+k",
+        "command": "multiCommand.pageUpAndCenter",
+        "when": "editorTextFocus"
+    }
 ]
