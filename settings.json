@@ -208,12 +208,4 @@
       ]
     }
   ],
-  "macros": {
-    "commentDown": [
-        "editor.action.copyLinesDownAction",
-        "cursorUp",
-        "editor.action.addCommentLine",
-        "cursorDown"
-    ]
-}
 }
