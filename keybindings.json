@@ -2,37 +2,17 @@
 [
     // VIM 
     {
-        "key": "tab",
+        "key": "alt+l",
         "command": "editor.action.indentLines",
-        "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode == 'Normal'"
+        "when": "editorTextFocus && !editorReadonly && !inDebugRepl"
     },
     {
-        "key": "shift+tab",
+        "key": "alt+h",
         "command": "editor.action.outdentLines",
-        "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode == 'Normal'"
-    },
-    {
-        "key": "tab",
-        "command": "editor.action.indentLines",
-        "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode == 'Visual'"
-    },
-    {
-        "key": "shift+tab",
-        "command": "editor.action.outdentLines",
-        "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode == 'Visual'"
+        "when": "editorTextFocus && !editorReadonly && !inDebugRepl"
     },
     {
         "key": "tab",
-        "command": "editor.action.indentLines",
-        "when": "editorTextFocus && !editorReadonly && !inDebugRepl && (vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock')"
-    },
-    {
-        "key": "shift+tab",
-        "command": "editor.action.outdentLines",
-        "when": "editorTextFocus && !editorReadonly && !inDebugRepl && (vim.mode == 'Normal' || vim.mode == 'Visual' || vim.mode == 'VisualLine' || vim.mode == 'VisualBlock')"
-    },
-    {
-        "key": "shift+space",
         "command": "extension.vim_escape",
         "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Normal'"
     },
@@ -74,7 +54,7 @@
         "when": "editorFocus"
     },
     {
-        "key": "ctrl+o",
+        "key": "ctrl+b",
         "command": "workbench.view.explorer"
     },
     {
@@ -88,6 +68,14 @@
     {
         "key": "ctrl+d",
         "command": "workbench.view.debug"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.quickOpen"
     },
     {
         "key": "alt+j",
@@ -108,5 +96,107 @@
         "key": "shift+k",
         "command": "multiCommand.pageUpAndCenter",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "shift+k",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+    },
+    {
+        "key": "shift+j",
+        "command": "workbench.action.debug.prevConsole",
+        "when": "inDebugRepl"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.debug.prevConsole",
+        "when": "inDebugRepl"
+    },
+    {
+        "key": "shift+j",
+        "command": "workbench.action.debug.nextConsole",
+        "when": "inDebugRepl"
+    },
+    {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.debug.nextConsole",
+        "when": "inDebugRepl"
+    },
+    {
+        "key": "shift+n",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+oem_3",
+        "command": "-workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "shift+d",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.showAllEditors",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.showAllEditors",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenNavigateNextInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
+        "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "shift+c",
+        "command": "list.collapseAll",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+left",
+        "command": "-list.collapseAll",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "shift+d",
+        "command": "git.cleanAll",
+        "when": "workbench.scm.defaultViewLocation"
+    },
+    {
+        "key": "shift+a",
+        "command": "git.stageChange"
+    },
+    {
+        "key": "shift+a",
+        "command": "git.stage"
+    },
+    {
+        "key": "shift+a",
+        "command": "gitlens.views.stageFile"
     }
 ]

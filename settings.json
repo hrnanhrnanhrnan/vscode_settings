@@ -135,10 +135,10 @@
         "before": ["<leader>", "t"],
         "commands": ["workbench.action.showAllSymbols"]
     },
-    {
-        "before": ["<leader>", "d"],
-        "commands": ["workbench.action.debug.callStackDown"]
-    },
+    // {
+    //     "before": ["<leader>", "d"],
+    //     "commands": ["workbench.action.debug.callStackDown"]
+    // },
     {
         "before": ["<leader>", "u"],
         "commands": ["workbench.action.debug.callStackUp"]
