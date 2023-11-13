@@ -2,17 +2,17 @@
 [
     // VIM 
     {
-        "key": "alt+l",
-        "command": "editor.action.indentLines",
-        "when": "editorTextFocus && !editorReadonly && !inDebugRepl"
-    },
-    {
-        "key": "alt+h",
-        "command": "editor.action.outdentLines",
-        "when": "editorTextFocus && !editorReadonly && !inDebugRepl"
-    },
-    {
         "key": "tab",
+        "command": "editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "shift+tab",
+        "command": "editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "shift+i",
         "command": "extension.vim_escape",
         "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Normal'"
     },
@@ -152,6 +152,7 @@
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
+	/*
     {
         "key": "ctrl+j",
         "command": "workbench.action.showAllEditors",
@@ -172,6 +173,7 @@
         "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
         "when": "inEditorsPicker && inQuickOpen"
     },
+	*/
     {
         "key": "shift+c",
         "command": "list.collapseAll",
@@ -185,7 +187,7 @@
     {
         "key": "shift+d",
         "command": "git.cleanAll",
-        "when": "workbench.scm.defaultViewLocation"
+        "when": "workbench.scm.active"
     },
     {
         "key": "shift+a",
