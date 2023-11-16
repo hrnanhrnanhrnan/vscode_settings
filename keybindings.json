@@ -9,7 +9,7 @@
     {
         "key": "shift+tab",
         "command": "editor.action.outdentLines",
-        "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode != 'Insert'"
+       "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode != 'Insert'"
     },
     {
         "key": "shift+i",
@@ -34,9 +34,12 @@
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     {
-        "key": "ctrl+'",
+        "key": "ctrl+n",
         "command": "csdevkit.addNewFile",
-        "args": ["solutionExplorer"]
+        "args": [
+            "solutionExplorer"
+        ],
+        "when": "focusedView == 'solutionExplorer'"
     },
     {
         "key": "ctrl+shift+n",
@@ -105,7 +108,7 @@
     {
         "key": "ctrl+pagedown",
         "command": "-workbench.action.terminal.focusNext",
-        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+       "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
     {
         "key": "shift+k",
@@ -152,7 +155,7 @@
         "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
-	/*
+                             /*
     {
         "key": "ctrl+j",
         "command": "workbench.action.showAllEditors",
@@ -173,7 +176,7 @@
         "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker",
         "when": "inEditorsPicker && inQuickOpen"
     },
-	*/
+                             */
     {
         "key": "shift+c",
         "command": "list.collapseAll",
@@ -187,7 +190,7 @@
     {
         "key": "shift+d",
         "command": "git.cleanAll",
-        "when": "workbench.scm.active"
+        "when": "view.workbench.scm.visible && workbench.scm.active && !terminalFocus"
     },
     {
         "key": "shift+a",
@@ -195,10 +198,146 @@
     },
     {
         "key": "shift+a",
-        "command": "git.stage"
+        "command": "git.stage",
+        "when": "isInDiffEditor && vim.active && !inDebugRepl && !operationInProgress && vim.mode == 'Normal'"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.view.testing.focus"
+    },
+    {
+        "key": "shift+c",
+        "command": "editor.toggleFold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "-editor.toggleFold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "ctrl+k ctrl+oem_5",
+        "command": "-workbench.action.splitEditorRight"
+    },
+    {
+        "key": "shift+l",
+        "command": "workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    },
+    {
+        "key": "alt+right",
+        "command": "-workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    },
+    {
+        "key": "shift+h",
+        "command": "workbench.action.navigateBack",
+        "when": "canNavigateBack"
+    },
+    {
+        "key": "alt+left",
+        "command": "-workbench.action.navigateBack",
+        "when": "canNavigateBack"
     },
     {
         "key": "shift+a",
-        "command": "gitlens.views.stageFile"
-    }
+        "command": "git.stageSelectedRanges",
+        "when": "isInDiffEditor && !operationInProgress && vim.active && !inDebugRepl && vim.mode != 'Normal'"
+    },
+    {
+        "key": "ctrl+k ctrl+alt+s",
+        "command": "-git.stageSelectedRanges",
+        "when": "isInDiffEditor && !operationInProgress"
+    },
+    {
+        "key": "shift+u",
+        "command": "git.unstageSelectedRanges",
+        "when": "isInDiffEditor && !operationInProgress && vim.active && !inDebugRepl && vim.mode != 'Normal'"
+    },
+    {
+        "key": "ctrl+k ctrl+n",
+        "command": "-git.unstageSelectedRanges",
+        "when": "isInDiffEditor && !operationInProgress"
+    },
+    {
+        "key": "shift+u",
+        "command": "git.unstage",
+        "when": "isInDiffEditor && !operationInProgress && vim.active && !inDebugRepl && vim.mode == 'Normal'"
+    },
+    {
+        "key": "shift+r",
+        "command": "git.revertSelectedRanges",
+        "when": "isInDiffEditor && !operationInProgress"
+    },
+    {
+        "key": "ctrl+k ctrl+r",
+        "command": "-git.revertSelectedRanges",
+        "when": "isInDiffEditor && !operationInProgress"
+    },
+    {
+        "key": "shift+d",
+        "command": "git.clean",
+        "when": "isInDiffEditor && !operationInProgress"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "workbench.action.findInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "-workbench.action.findInFiles"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "search.action.focusNextSearchResult",
+        "when": "hasSearchResult || inSearchEditor"
+    },
+    {
+        "key": "f4",
+        "command": "-search.action.focusNextSearchResult",
+        "when": "hasSearchResult || inSearchEditor"
+    },
+    {
+        "key": "shift+space",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "hasSearchResult || inSearchEditor"
+    },
+    {
+        "key": "shift+f4",
+        "command": "-search.action.focusPreviousSearchResult",
+        "when": "hasSearchResult || inSearchEditor"
+    },
+    {
+        "key": "shift+l",
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "alt+f5",
+        "command": "-workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "shift+h",
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "shift+alt+f5",
+        "command": "-workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
 ]

@@ -30,31 +30,31 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     // EDITOR COMMANDS
     {
+      "before": ["E"],
+      "after": ["$"]
+    },
+    {
+      "before": ["B"],
+      "after": ["0"]
+    },
+    {
       "before": ["J"],
-      "after": []
+      "after": [""]
     },
     {
       "before": ["K"],
-      "after": []
-    },
-    {
-        "before": ["<leader>", "l"],
-        "commands": ["workbench.action.navigateForward"]
-    },
-    {
-        "before": ["<leader>", "h"],
-        "commands": ["workbench.action.navigateBack"]
+      "after": [""]
     },
     { 
-        "before": ["<leader>", "d"],
+        "before": ["g", "d"],
         "commands": ["editor.action.revealDefinition"]
     },
     {
-        "before": ["<leader>", "i"],
+        "before": ["g", "i"],
         "commands": ["editor.action.goToImplementation"]
     },
     {
-        "before": ["<leader>", "r"],
+        "before": ["g", "r"],
         "commands": ["editor.action.goToReferences"]
     },
     // {
@@ -135,10 +135,10 @@
         "before": ["<leader>", "t"],
         "commands": ["workbench.action.showAllSymbols"]
     },
-    // {
-    //     "before": ["<leader>", "d"],
-    //     "commands": ["workbench.action.debug.callStackDown"]
-    // },
+    {
+        "before": ["<leader>", "d"],
+        "commands": ["workbench.action.debug.callStackDown"]
+    },
     {
         "before": ["<leader>", "u"],
         "commands": ["workbench.action.debug.callStackUp"]
@@ -167,6 +167,7 @@
   "search.searchOnType": false,
   "breadcrumbs.icons": false,
   "breadcrumbs.showArrays": false,
+  "breadcrumbs.enabled": false,
   "breadcrumbs.symbolPath": "off",
   "multiCommand.commands": [
     {
@@ -208,11 +209,11 @@
       ]
     }
   ],
-  "workbench.editor.showTabs": "none",
-  "workbench.activityBar.location": "hidden",
+  "workbench.editor.showTabs": false,
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}${separator}${remoteName}",
   "workbench.startupEditor": "none",
-  "window.menuBarVisibility": "hidden",
+  "workbench.activityBar.visible": false,
+  "window.menuBarVisibility": "compact"
 }
