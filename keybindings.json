@@ -9,18 +9,12 @@
     {
         "key": "shift+tab",
         "command": "editor.action.outdentLines",
-       "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode != 'Insert'"
+        "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode != 'Insert'"
     },
     {
         "key": "shift+i",
         "command": "extension.vim_escape",
         "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Normal'"
-    },
-    {
-        "key": "shift+enter",
-        "command": "type",
-        "args": {"text": "\n"},
-        "when": "editorTextFocus && vim.active && !inDebugRep l&& vim.mode == 'Normal'"
     },
     // EXPLOERER
     {
@@ -39,7 +33,7 @@
         "args": [
             "solutionExplorer"
         ],
-        "when": "focusedView == 'solutionExplorer'"
+        "when": "focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'File' || focusedView == 'solutionExplorer' && selectedSolutionExplorerNodeType == 'Folder'"
     },
     {
         "key": "ctrl+shift+n",
@@ -93,7 +87,7 @@
     {
         "key": "shift+j",
         "command": "multiCommand.pageDownAndCenter",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus  && !codeActionMenuVisible"
     },
     {
         "key": "shift+k",
@@ -108,7 +102,7 @@
     {
         "key": "ctrl+pagedown",
         "command": "-workbench.action.terminal.focusNext",
-       "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
     {
         "key": "shift+k",
@@ -121,18 +115,8 @@
         "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
     },
     {
-        "key": "shift+j",
-        "command": "workbench.action.debug.prevConsole",
-        "when": "inDebugRepl"
-    },
-    {
         "key": "ctrl+pageup",
         "command": "-workbench.action.debug.prevConsole",
-        "when": "inDebugRepl"
-    },
-    {
-        "key": "shift+j",
-        "command": "workbench.action.debug.nextConsole",
         "when": "inDebugRepl"
     },
     {
@@ -143,7 +127,7 @@
     {
         "key": "shift+n",
         "command": "workbench.action.terminal.new",
-        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+        "when": "terminalFocus"
     },
     {
         "key": "ctrl+shift+oem_3",
@@ -152,7 +136,7 @@
     },
     {
         "key": "shift+d",
-        "command": "workbench.action.terminal.kill",
+       "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
                              /*
@@ -222,10 +206,6 @@
         "key": "ctrl+k ctrl+l",
         "command": "-editor.toggleFold",
         "when": "editorTextFocus && foldingEnabled"
-    },
-    {
-        "key": "ctrl+k ctrl+l",
-        "command": "workbench.action.splitEditorRight"
     },
     {
         "key": "ctrl+k ctrl+oem_5",
@@ -340,4 +320,268 @@
         "command": "-workbench.action.compareEditor.previousChange",
         "when": "textCompareEditorVisible"
     },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "workbench.action.moveActiveEditorGroupRight",
+        "when": "editorGroupIndex < groupCount - 1 && groupCount > 1"
+    },
+    {
+        "key": "ctrl+k right",
+        "command": "-workbench.action.moveActiveEditorGroupRight"
+    },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "workbench.action.moveEditorToNextGroup",
+        "when": "!activeEditorGroupLast"
+    },
+    {
+        "key": "ctrl+alt+right",
+        "command": "-workbench.action.moveEditorToNextGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+h",
+        "command": "workbench.action.splitEditorLeft"
+    },
+    {
+        "key": "ctrl+k ctrl+\\",
+        "command": "-workbench.action.splitEditorLeft"
+    },
+    {
+        "key": "ctrl+k ctrl+h",
+        "command": "workbench.action.moveEditorToLeftGroup"
+    },
+    {
+        "key": "ctrl+alt+k ctrl+alt+h",
+        "command": "workbench.action.moveActiveEditorGroupLeft"
+    },
+    {
+        "key": "ctrl+k left",
+        "command": "-workbench.action.moveActiveEditorGroupLeft"
+    },
+    {
+        "key": "ctrl+alt+k ctrl+alt+l",
+        "command": "workbench.action.moveActiveEditorGroupRight"
+    },
+    {
+        "key": "ctrl+k ctrl+h",
+        "command": "workbench.action.moveEditorToPreviousGroup"
+    },
+    {
+        "key": "ctrl+alt+left",
+        "command": "-workbench.action.moveEditorToPreviousGroup"
+    },
+    {
+        "key": "shift+c",
+        "command": "workbench.debug.action.focusRepl",
+        "when": "panelFocus"
+    },
+    {
+        "key": "shift+o",
+        "command": "workbench.panel.output.focus",
+        "when": "panelFocus"
+    },
+    {
+        "key": "shift+p",
+        "command": "workbench.action.problems.focus",
+        "when": "panelFocus"
+    },
+    {
+        "key": "shift+r",
+        "command": "workbench.panel.testResults.view.focus",
+        "when": "panelFocus"
+    },
+    {
+        "key": "down",
+        "command": "-selectNextCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "shift+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion && !codeActionMenuVisible"
+    },
+    {
+        "key": "down",
+        "command": "-selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "up",
+        "command": "-selectPrevCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "shift+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "up",
+        "command": "-selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "shift+p",
+        "command": "editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+space",
+        "command": "-editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+        "key": "shift+s",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "-selectNextCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "-selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "-extension.vim_ctrl+down",
+        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    },
+    {
+        "key": "shift+j",
+        "command": "showNextParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible && !codeActionMenuVisible"
+    },
+    {
+        "key": "down",
+        "command": "-showNextParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "shift+k",
+        "command": "showPrevParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "up",
+        "command": "-showPrevParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "shift+p",
+        "command": "closeParameterHints",
+        "when": "editorFocus && parameterHintsVisible"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-closeParameterHints",
+        "when": "editorFocus && parameterHintsVisible"
+    },
+    {
+        "key": "alt+down",
+        "command": "-showNextParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "alt+up",
+        "command": "-showPrevParameterHint",
+        "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+    },
+    {
+        "key": "shift+s",
+        "command": "hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "-selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "-selectPrevCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "shift+f",
+        "command": "editor.action.formatSelection",
+        "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k ctrl+f",
+        "command": "-editor.action.formatSelection",
+        "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+.",
+        "command": "-acceptSelectedCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+   {
+        "key": "ctrl+.",
+        "command": "hideCodeActionWidget",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-hideCodeActionWidget",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "shift+.",
+        "command": "editor.action.wordHighlight.next",
+        "when": "editorTextFocus && !textInputFocus && hasWordHighlights"
+    },
+    {
+        "key": "f7",
+        "command": "-editor.action.wordHighlight.next",
+        "when": "editorTextFocus && hasWordHighlights"
+    },
+    {
+        "key": "shift+,",
+        "command": "editor.action.wordHighlight.prev",
+        "when": "editorTextFocus && !textInputFocus && hasWordHighlights"
+    },
+    {
+        "key": "shift+f7",
+        "command": "-editor.action.wordHighlight.prev",
+        "when": "editorTextFocus && hasWordHighlights"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "togglePeekWidgetFocus",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "ctrl+k f2",
+        "command": "-togglePeekWidgetFocus",
+        "when": "inReferenceSearchEditor || referenceSearchVisible"
+    }
 ]

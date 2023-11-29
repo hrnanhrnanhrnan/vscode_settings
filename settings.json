@@ -27,12 +27,13 @@
   "vim.easymotionMarkerFontWeight": "bold",
   "vim.statusBarColors.easymotioninputmode": "#ff0000",
   "vim.statusBarColors.easymotionmode": "#ff0000",
+  // "editor.fontFamily": "",
   "vim.normalModeKeyBindingsNonRecursive": [
     // EDITOR COMMANDS
     {
       "before": ["E"],
       "after": ["$"]
-    },
+   },
     {
       "before": ["B"],
       "after": ["0"]
@@ -85,18 +86,18 @@
       "before": ["<leader>", "e"],
       "after": ["$"], 
     },
-    {
-        "before": ["<leader>", "s"],
-        "commands": ["editor.action.triggerSuggest"]
-    },
+    // {
+    //     "before": ["<leader>", "s"],
+    //     "commands": ["editor.action.triggerSuggest"]
+    // },
     // {
     //     "before": ["<leader>", "s"],
     //     "commands": ["editor.action.inlineSuggest.trigger"]
     // },
-    {
-        "before": ["<leader>", "p"],
-        "commands": ["editor.action.triggerParameterHints"]
-    },
+    // {
+    //     "before": ["<leader>", "p"],
+    //     "commands": ["editor.action.triggerParameterHints"]
+    // },
     {
         "before": ["<leader>", "o"],
         "commands": ["workbench.action.gotoSymbol"]
@@ -113,7 +114,7 @@
       "before": ["<CR>"],
       "after": ["o", "<Esc>"], 
     },
-
+ 
     // COMMANDS COMMANDS
     {
         "before": ["<leader>", ";"],
@@ -121,7 +122,7 @@
     },
     {
         "before": ["<leader>", "f"],
-        "commands": ["workbench.action.quickOpen"]
+        "commands": ["workbench.action.experimental.quickTextSearch"]
     },
     // {
     //     "before": ["<leader>", "e"],
@@ -143,8 +144,12 @@
         "before": ["<leader>", "u"],
         "commands": ["workbench.action.debug.callStackUp"]
     },
+  {
+      "before": ["<leader>", "f"],
+      "commands": ["editor.action.formatSelection"]
+  },
 ],
-
+ 
 "vim.visualModeKeyBindingsNonRecursive": [
   {
       "before": ["<leader>", "f"],
@@ -167,7 +172,6 @@
   "search.searchOnType": false,
   "breadcrumbs.icons": false,
   "breadcrumbs.showArrays": false,
-  "breadcrumbs.enabled": false,
   "breadcrumbs.symbolPath": "off",
   "multiCommand.commands": [
     {
@@ -212,8 +216,9 @@
   "workbench.editor.showTabs": false,
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
-  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}${separator}${remoteName}",
-  "workbench.startupEditor": "none",
+  "window.title": "🎅${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}${separator}${remoteName}🎅",
+ "workbench.startupEditor": "none",
   "workbench.activityBar.visible": false,
-  "window.menuBarVisibility": "compact"
+  "window.menuBarVisibility": "compact",
+  "debug.inlineValues": "on"
 }
