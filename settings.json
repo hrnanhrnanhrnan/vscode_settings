@@ -2,7 +2,6 @@
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
   "editor.minimap.showSlider": "always",
-  "workbench.iconTheme": "vscode-icons",
   "gitlens.gitCommands.skipConfirmations": ["fetch:command", "switch:command"],
   "editor.autoSurround": "languageDefined",
   "editor.inlayHints.enabled": "on",
@@ -18,7 +17,7 @@
     "<C-y>": false,
     "<C-t>": false,
     "<C-e>": false,
-    "<C-o>": false,
+   "<C-o>": false,
   },
   "vim.leader": "<Space>",
   "vim.scroll": 0,
@@ -46,6 +45,14 @@
       "before": ["K"],
       "after": [""]
     },
+    {
+      "before": [">"],
+      "after": [""]
+    },
+    {
+      "before": ["<"],
+      "after": [""]
+    },
     { 
         "before": ["g", "d"],
         "commands": ["editor.action.revealDefinition"]
@@ -55,9 +62,18 @@
         "commands": ["editor.action.goToImplementation"]
     },
     {
-        "before": ["g", "r"],
+       "before": ["g", "r"],
         "commands": ["editor.action.goToReferences"]
     },
+    {
+        "before": ["g", "h"],
+        "commands": ["editor.action.wordHighlight.prev"]
+    },
+    {
+        "before": ["g", "l"],
+        "commands": ["editor.action.wordHighlight.next"]
+    },
+
     // {
     //   "before": ["<leader>", "j"],
     //   "after": ["<C-d>"], 
@@ -114,7 +130,7 @@
       "before": ["<CR>"],
       "after": ["o", "<Esc>"], 
     },
- 
+
     // COMMANDS COMMANDS
     {
         "before": ["<leader>", ";"],
@@ -149,7 +165,7 @@
       "commands": ["editor.action.formatSelection"]
   },
 ],
- 
+
 "vim.visualModeKeyBindingsNonRecursive": [
   {
       "before": ["<leader>", "f"],
@@ -162,7 +178,7 @@
   "vim.cursorStylePerMode.insert": "line-thin",
   "terminal.integrated.env.windows": {},
   "console-ninja.featureSet": "Community",
-  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorTheme": "GitHub Dark Default",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1,
@@ -213,12 +229,15 @@
       ]
     }
   ],
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "none",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   "window.title": "🎅${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}${separator}${remoteName}🎅",
- "workbench.startupEditor": "none",
-  "workbench.activityBar.visible": false,
+  "workbench.startupEditor": "none",
   "window.menuBarVisibility": "compact",
-  "debug.inlineValues": "on"
+  "debug.inlineValues": "on",
+  "workbench.activityBar.location": "hidden",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
+  "background.enabled": false
 }

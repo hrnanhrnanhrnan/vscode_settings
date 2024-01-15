@@ -136,7 +136,7 @@
     },
     {
         "key": "shift+d",
-       "command": "workbench.action.terminal.kill",
+        "command": "workbench.action.terminal.kill",
         "when": "terminalFocus"
     },
                              /*
@@ -279,16 +279,6 @@
     {
         "key": "ctrl+shift+f",
         "command": "-workbench.action.findInFiles"
-    },
-    {
-        "key": "ctrl+space",
-        "command": "search.action.focusNextSearchResult",
-        "when": "hasSearchResult || inSearchEditor"
-    },
-    {
-        "key": "f4",
-        "command": "-search.action.focusNextSearchResult",
-        "when": "hasSearchResult || inSearchEditor"
     },
     {
         "key": "shift+space",
@@ -539,7 +529,7 @@
         "command": "-acceptSelectedCodeAction",
         "when": "codeActionMenuVisible"
     },
-   {
+    {
         "key": "ctrl+.",
         "command": "hideCodeActionWidget",
         "when": "codeActionMenuVisible"
@@ -554,21 +544,21 @@
         "command": "selectNextCodeAction",
         "when": "codeActionMenuVisible"
     },
-    {
-        "key": "shift+.",
-        "command": "editor.action.wordHighlight.next",
-        "when": "editorTextFocus && !textInputFocus && hasWordHighlights"
-    },
+    // {
+    //     "key": "g h",
+    //     "command": "editor.action.wordHighlight.next",
+    //     "when": "editorTextFocus"
+    // },
     {
         "key": "f7",
         "command": "-editor.action.wordHighlight.next",
         "when": "editorTextFocus && hasWordHighlights"
     },
-    {
-        "key": "shift+,",
-        "command": "editor.action.wordHighlight.prev",
-        "when": "editorTextFocus && !textInputFocus && hasWordHighlights"
-    },
+    // {
+    //     "key": "g l",
+    //     "command": "editor.action.wordHighlight.prev",
+    //     "when": "editorTextFocus"
+    // },
     {
         "key": "shift+f7",
         "command": "-editor.action.wordHighlight.prev",
@@ -583,5 +573,60 @@
         "key": "ctrl+k f2",
         "command": "-togglePeekWidgetFocus",
         "when": "inReferenceSearchEditor || referenceSearchVisible"
+    },
+    {
+        "key": "shift+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "shift+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "search.focus.nextInputBox",
+        "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "-search.focus.nextInputBox",
+        "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "search.focus.previousInputBox",
+        "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "-search.focus.previousInputBox",
+        "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-actions.find",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "shift+v",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+v",
+        "command": "editor.debug.action.showDebugHover",
+        "when": "editorTextFocus && inDebugMode"
+    },
+    {
+        "key": "ctrl+k ctrl+i",
+        "command": "-editor.debug.action.showDebugHover",
+        "when": "editorTextFocus && inDebugMode"
     }
 ]
