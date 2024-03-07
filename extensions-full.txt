@@ -30,3 +30,4 @@ WallabyJs.console-ninja
 WallabyJs.quokka-vscode
 wholroyd.jinja
 jacobdufault.fuzzy-search
+yoavbls.pretty-ts-errors
