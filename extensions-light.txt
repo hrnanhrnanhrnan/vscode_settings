@@ -19,3 +19,4 @@ vscodevim.vim
 WallabyJs.console-ninja
 jacobdufault.fuzzy-search
 yoavbls.pretty-ts-errors
+YomiTosh.livegrep
