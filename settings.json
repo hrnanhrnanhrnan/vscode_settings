@@ -223,7 +223,7 @@
       ]
     }
   ],
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "single",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   "window.title": "🐱‍👤${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}${separator}${remoteName}",
