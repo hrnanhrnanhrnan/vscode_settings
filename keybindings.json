@@ -11,11 +11,11 @@
         "command": "editor.action.outdentLines",
         "when": "editorTextFocus && !editorReadonly && !inDebugRepl && vim.mode != 'Insert'"
     },
-    {
-        "key": "shift+i",
-        "command": "extension.vim_escape",
-        "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Normal'"
-    },
+    // {
+    //     "key": "shift+i",
+    //     "command": "extension.vim_escape",
+    //     "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Normal'"
+    // },
     // EXPLOERER
     {
         "key": "ctrl+n",
@@ -272,7 +272,7 @@
         "when": "isInDiffEditor && !operationInProgress"
     },
     {
-        "key": "ctrl+f",
+        "key": "ctrl+/",
         "command": "workbench.action.findInFiles",
         "when": "editorFocus"
     },
@@ -606,11 +606,11 @@
     },
     {
         "key": "ctrl+f",
-        "command": "-actions.find",
+        "command": "actions.find",
         "when": "editorFocus || editorIsOpen"
     },
     {
-        "key": "shift+v",
+        "key": "shift+m",
         "command": "editor.action.showHover",
         "when": "editorTextFocus"
     },
@@ -628,5 +628,17 @@
         "key": "ctrl+k ctrl+i",
         "command": "-editor.debug.action.showDebugHover",
         "when": "editorTextFocus && inDebugMode"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "fuzzySearch.activeTextEditorWithCurrentSelection"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
     }
 ]
