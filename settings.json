@@ -1,5 +1,4 @@
 {
-  "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
   "editor.minimap.showSlider": "always",
   "gitlens.gitCommands.skipConfirmations": ["fetch:command", "switch:command"],
@@ -22,7 +21,7 @@
   "vim.leader": "<Space>",
   "vim.scroll": 0,
   "vim.easymotion": true,
-  "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
+  "vim.easymotionKeys": "asdfghjkl;iwen",
   "vim.easymotionMarkerFontWeight": "bold",
   "vim.statusBarColors.easymotioninputmode": "#ff0000",
   "vim.statusBarColors.easymotionmode": "#ff0000",
@@ -53,6 +52,10 @@
       "before": ["<"],
       "after": [""]
     },
+    {
+      "before": ["/"],
+      "after": ["<Space>", "<Space>", "/"]
+    },
     { 
         "before": ["g", "d"],
         "commands": ["editor.action.revealDefinition"]
@@ -73,7 +76,7 @@
         "before": ["g", "l"],
         "commands": ["editor.action.wordHighlight.next"]
     },
-
+ 
     // {
     //   "before": ["<leader>", "j"],
     //   "after": ["<C-d>"], 
@@ -94,14 +97,6 @@
     //     }
     //   ],
     // },
-    {
-      "before": ["<leader>", "b"],
-      "after": ["0"], 
-    },
-    {
-      "before": ["<leader>", "e"],
-      "after": ["$"], 
-    },
     // {
     //     "before": ["<leader>", "s"],
     //     "commands": ["editor.action.triggerSuggest"]
@@ -119,7 +114,7 @@
         "commands": ["workbench.action.gotoSymbol"]
     },
     {
-        "before": ["<leader>", "/"],
+        "before": ["<leader>", "["],
         "commands": ["editor.action.jumpToBracket"]
     },
     {
@@ -130,61 +125,60 @@
       "before": ["<CR>"],
       "after": ["o", "<Esc>"], 
     },
-
+ 
     // COMMANDS COMMANDS
-    {
-        "before": ["<leader>", ";"],
-        "commands": ["workbench.action.showCommands"]
-    },
-    {
-        "before": ["<leader>", "f"],
-        "commands": ["workbench.action.experimental.quickTextSearch"]
-    },
     // {
-    //     "before": ["<leader>", "e"],
-    //     "commands": ["workbench.action.focusFirstEditorGroup"]
+    //     "before": ["<leader>", ";"],
+    //     "commands": ["workbench.action.showCommands"]
     // },
     // {
-    //     "before": ["<leader>", "v"],
-    //     "commands": ["workbench.action.focusSideBar"]
+    //     "before": ["<leader>", ";"],
+    //     "commands": ["workbench.action.showCommands"]
     // },
     {
-        "before": ["<leader>", "t"],
-        "commands": ["workbench.action.showAllSymbols"]
+        "before": ["g", "p", "l"],
+        "commands": ["editor.action.marker.next"]
     },
     {
-        "before": ["<leader>", "d"],
-        "commands": ["workbench.action.debug.callStackDown"]
+        "before": ["g", "p", "h"],
+        "commands": ["editor.action.marker.prev"]
     },
-    {
-        "before": ["<leader>", "u"],
-        "commands": ["workbench.action.debug.callStackUp"]
-    },
+    // {
+      //     "before": ["<leader>", "e"],
+      //     "commands": ["workbench.action.focusFirstEditorGroup"]
+      // },
+      // {
+        //     "before": ["<leader>", "v"],
+        //     "commands": ["workbench.action.focusSideBar"]
+        // },
+        
+        
+      // LEADER STUFF
+    // {
+    //     "before": ["<leader>", "f"],
+    //     "commands": ["workbench.action.experimental.quickTextSearch"]
+    // },
   {
       "before": ["<leader>", "f"],
       "commands": ["editor.action.formatSelection"]
   },
+  // {
+  //     "before": ["k", "j"],
+  //     "after": ["<Esc>"], 
+  // },
 ],
-
-"vim.visualModeKeyBindingsNonRecursive": [
-  {
-      "before": ["<leader>", "f"],
-      "commands": ["editor.action.formatSelection"]
-  },
-],
+  "vim.highlightedyank.enable": true,
   "glassit.alpha": 250,
   "diffEditor.ignoreTrimWhitespace": false,
   "vim.cursorStylePerMode.visual": "underline-thin",
   "vim.cursorStylePerMode.insert": "line-thin",
   "terminal.integrated.env.windows": {},
   "console-ninja.featureSet": "Community",
-  "workbench.colorTheme": "GitHub Dark Default",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1,
   },
   "editor.minimap.enabled": false,
-  "editor.codeLens": false,
   "search.searchOnType": false,
   "breadcrumbs.icons": false,
   "breadcrumbs.showArrays": false,
@@ -229,15 +223,24 @@
       ]
     }
   ],
-  "workbench.editor.showTabs": "none",
+  "workbench.editor.showTabs": false,
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
-  "window.title": "🎅${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}${separator}${remoteName}🎅",
+  "window.title": "🐱‍👤${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}${separator}${remoteName}",
   "workbench.startupEditor": "none",
-  "window.menuBarVisibility": "compact",
+  "window.menuBarVisibility": "toggle",
   "debug.inlineValues": "on",
   "workbench.activityBar.location": "hidden",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "right",
-  "background.enabled": false
+  "background.enabled": false,
+  "dotnet.server.useOmnisharp": true,
+  "workbench.colorTheme": "GitHub Dark Default",
+  "dotnet.preferCSharpExtension": true,
+  "debug.onTaskErrors": "debugAnyway",
+  "dotnet-test-explorer.enableTelemetry": false,
+  "dotnet.inlayHints.enableInlayHintsForParameters": true,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.fontFamily": "Consolas",
+  "editor.codeLens": false,
 }
