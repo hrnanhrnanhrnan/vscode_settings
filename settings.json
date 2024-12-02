@@ -3,7 +3,6 @@
   "editor.minimap.showSlider": "always",
   "gitlens.gitCommands.skipConfirmations": ["fetch:command", "switch:command"],
   "editor.autoSurround": "languageDefined",
-  "editor.inlayHints.enabled": "on",
   "vim.handleKeys": {
     "<C-c>": false,
     "<C-v>": false,
@@ -18,7 +17,7 @@
     "<C-e>": false,
     "<C-d>": false,
     "<C-u>": false,
-   "<C-o>": false,
+    "<C-o>": false
   },
   "vim.leader": "<Space>",
   "vim.scroll": 0,
@@ -44,14 +43,14 @@
     {
       "before": ["K"],
       "commands": ["editor.action.moveLinesUpAction"]
-    },
+    }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     // EDITOR COMMANDS
     {
       "before": ["E"],
       "after": ["$"]
-   },
+    },
     {
       "before": ["B"],
       "after": ["0"]
@@ -80,65 +79,65 @@
       "before": ["/"],
       "after": ["<Space>", "<Space>", "/"]
     },
-    { 
-        "before": ["g", "d"],
-        "commands": ["editor.action.revealDefinition"]
+    {
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinition"]
     },
     {
-        "before": ["g", "i"],
-        "commands": ["editor.action.goToImplementation"]
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
     },
     {
-       "before": ["g", "r"],
-        "commands": ["editor.action.goToReferences"]
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
     },
     {
-        "before": ["g", "h", "w"],
-        "commands": ["editor.action.wordHighlight.prev"]
+      "before": ["g", "h", "w"],
+      "commands": ["editor.action.wordHighlight.prev"]
     },
     {
-        "before": ["g", "l", "w"],
-        "commands": ["editor.action.wordHighlight.next"],
+      "before": ["g", "l", "w"],
+      "commands": ["editor.action.wordHighlight.next"]
     },
     {
-        "before": ["<leader>", "o"],
-        "commands": ["workbench.action.gotoSymbol"]
+      "before": ["<leader>", "o"],
+      "commands": ["workbench.action.gotoSymbol"]
     },
     {
-        "before": ["<leader>", "["],
-        "commands": ["editor.action.jumpToBracket"]
+      "before": ["<leader>", "["],
+      "commands": ["editor.action.jumpToBracket"]
     },
     {
-        "before": ["<leader>", "c"],
-        "commands": ["editor.showCallHierarchy"]
+      "before": ["<leader>", "c"],
+      "commands": ["editor.showCallHierarchy"]
     },
     {
       "before": ["<CR>"],
-      "after": ["o", "<Esc>"], 
+      "after": ["o", "<Esc>"]
     },
     {
-        "before": ["g", "l", "p"],
-        "commands": ["editor.action.marker.next"]
+      "before": ["g", "l", "p"],
+      "commands": ["editor.action.marker.next"]
     },
     {
-        "before": ["g", "h", "p"],
-        "commands": ["editor.action.marker.prev"]
+      "before": ["g", "h", "p"],
+      "commands": ["editor.action.marker.prev"]
     },
-        
-      // LEADER STUFF
+
+    // LEADER STUFF
     // {
     //     "before": ["<leader>", "f"],
     //     "commands": ["workbench.action.experimental.quickTextSearch"]
     // },
-  {
+    {
       "before": ["<leader>", "f"],
       "commands": ["editor.action.formatSelection"]
-  },
-  // {
-  //     "before": ["k", "j"],
-  //     "after": ["<Esc>"], 
-  // },
-],
+    }
+    // {
+    //     "before": ["k", "j"],
+    //     "after": ["<Esc>"],
+    // },
+  ],
   "vim.highlightedyank.enable": true,
   "glassit.alpha": 250,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -148,7 +147,7 @@
   "console-ninja.featureSet": "Community",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "extensions.experimental.affinity": {
-    "vscodevim.vim": 1,
+    "vscodevim.vim": 1
   },
   "editor.minimap.enabled": false,
   "search.searchOnType": false,
@@ -157,13 +156,28 @@
   "breadcrumbs.symbolPath": "off",
   "multiCommand.commands": [
     {
+      "command": "multiCommand.goToSymbolAndCategory",
+      "sequence": [
+        {
+          "command": "workbench.action.gotoSymbol" // Öppnar "Go to Symbol in File"
+        },
+        {
+          "command": "type", // Simulerar att skriva ":"
+          "args": {
+            "text": ":"
+          }
+        }
+      ]
+    },
+    {
       "command": "multiCommand.pageDownAndCenter",
       "sequence": [
         {
           "command": "editorScroll",
           "args": {
             "to": "down",
-            "by": "page",
+            "by": "line",
+            "value": 15,
             "revealCursor": true
           }
         },
@@ -182,7 +196,8 @@
           "command": "editorScroll",
           "args": {
             "to": "up",
-            "by": "page",
+            "by": "line",
+            "value": 15,
             "revealCursor": true
           }
         },
@@ -205,14 +220,41 @@
   "workbench.activityBar.location": "hidden",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "right",
-  "background.enabled": false,
   "dotnet.server.useOmnisharp": true,
-  "workbench.colorTheme": "GitHub Dark Default",
-  "dotnet.preferCSharpExtension": true,
+  "workbench.colorTheme": "Catppuccin Mocha",
   "debug.onTaskErrors": "debugAnyway",
   "dotnet-test-explorer.enableTelemetry": false,
-  "dotnet.inlayHints.enableInlayHintsForParameters": true,
   "editor.scrollbar.vertical": "hidden",
   "editor.fontFamily": "Consolas",
-  "editor.codeLens": false,
+  "editor.stickyScroll.enabled": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": -0.5,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editor.editorActionsLocation": "hidden",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.accessibilitySupport": "off",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "gitlens.codeLens.enabled": false,
+  "dotnet.inlayHints.enableInlayHintsForParameters": true,
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  },
+  "dotnet.preferCSharpExtension": true,
+  "workbench.tree.indent": 20,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
