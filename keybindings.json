@@ -39,9 +39,9 @@
   },
   // GENERAL
   {
-    "key": "ctrl+right",
+    "key": "ctrl+shift+l",
     "command": "workbench.action.focusNextGroup",
-    "when": "editorFocus && !renameInputVisible"
+    "when": "editorFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
     "key": "ctrl+b",
@@ -290,9 +290,9 @@
     "when": "editorTextFocus && !renameInputVisible"
   },
   {
-    "key": "ctrl+shift+right",
+    "key": "ctrl+alt+l",
     "command": "workbench.action.moveEditorToNextGroup",
-    "when": "editorTextFocus && !activeEditorGroupLast && !renameInputVisible"
+    "when": "(terminalFocus || editorTextFocus) && !activeEditorGroupLast && !renameInputVisible"
   },
   {
     "key": "ctrl+alt+right",
@@ -308,23 +308,23 @@
     "command": "-workbench.action.splitEditorLeft"
   },
   {
-    "key": "ctrl+shift+left",
+    "key": "ctrl+alt+h",
     "command": "workbench.action.moveEditorToLeftGroup",
-    "when": "editorTextFocus && !renameInputVisible"
+    "when": "editorTextFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
-    "key": "ctrl+shift+left",
+    "key": "ctrl+alt+h",
     "command": "workbench.action.moveActiveEditorGroupLeft",
-    "when": "editorTextFocus && !renameInputVisible"
+    "when": "editorFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
     "key": "ctrl+k left",
     "command": "-workbench.action.moveActiveEditorGroupLeft"
   },
   {
-    "key": "ctrl+shift+left",
+    "key": "ctrl+alt+h",
     "command": "workbench.action.moveEditorToPreviousGroup",
-    "when": "editorTextFocus && !renameInputVisible"
+    "when": "editorFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
     "key": "ctrl+alt+left",
@@ -654,7 +654,7 @@
     "when": "resource == 'vscode-userdata:/c%3A/Users/hrnan/AppData/Roaming/Code/User/keybindings.json'"
   },
   {
-    "key": "ctrl+alt+h",
+    "key": "ctrl+alt+r",
     "command": "workbench.action.replaceInFiles"
   },
   {
@@ -1096,9 +1096,9 @@
     "when": "customTreeView && listFocus && !inputFocus && !treestickyScrollFocused"
   },
   {
-    "key": "ctrl+shift+right",
+    "key": "ctrl+alt+l",
     "command": "workbench.action.moveActiveEditorGroupRight",
-    "when": "editorFocus && !renameInputVisible"
+    "when": "editorFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
     "key": "ctrl+k right",
@@ -1149,18 +1149,18 @@
     "when": "workbench.panel.markers.view.active"
   },
   {
-    "key": "ctrl+shift+right",
+    "key": "ctrl+alt+l",
     "command": "workbench.action.moveEditorRightInGroup",
-    "when": "editorFocus && !renameInputVisible"
+    "when": "editorFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
     "key": "ctrl+shift+pagedown",
     "command": "-workbench.action.moveEditorRightInGroup"
   },
   {
-    "key": "ctrl+shift+right",
+    "key": "ctrl+alt+l",
     "command": "workbench.action.moveEditorToRightGroup",
-    "when": "editorFocus && !renameInputVisible"
+    "when": "editorFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
     "key": "ctrl+j",
@@ -1173,14 +1173,14 @@
     "when": "editorTextFocus && !suggestWidgetVisible && !parameterHintsVisible && !codeActionMenuVisible"
   },
   {
-    "key": "ctrl+shift+up",
+    "key": "ctrl+alt+k",
     "command": "workbench.action.moveEditorToAboveGroup",
-    "when": "editorFocus && !renameInputVisible"
+    "when": "editorFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
-    "key": "ctrl+shift+down",
+    "key": "ctrl+alt+j",
     "command": "workbench.action.moveEditorToBelowGroup",
-    "when": "editorFocus && !renameInputVisible"
+    "when": "editorTextFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
     "key": "ctrl+f",
@@ -1286,23 +1286,31 @@
     "command": "-workbench.action.quickOpen"
   },
   {
-    "key": "ctrl+left",
+    "key": "ctrl+shift+h",
     "command": "workbench.action.focusPreviousGroup",
-    "when": "editorFocus && !renameInputVisible"
+    "when": "editorFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
-    "key": "ctrl+up",
+    "key": "ctrl+shift+k",
     "command": "workbench.action.focusAboveGroup",
-    "when": "editorFocus && !renameInputVisible"
+    "when": "(editorFocus || terminalFocus) && !renameInputVisible"
   },
   {
-    "key": "ctrl+down",
+    "key": "ctrl+shift+j",
     "command": "workbench.action.focusBelowGroup",
-    "when": "editorFocus && !renameInputVisible"
+    "when": "editorFocus && !renameInputVisible || terminalFocus && !renameInputVisible"
   },
   {
     "key": "ctrl+e",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "!referenceSearchVisible"
+  },
+  {
+    "key": "ctrl+t ctrl+e",
+    "command": "workbench.action.terminal.moveToEditor"
+  },
+  {
+    "key": "ctrl+t ctrl+p",
+    "command": "workbench.action.terminal.moveToTerminalPanel"
   }
 ]
