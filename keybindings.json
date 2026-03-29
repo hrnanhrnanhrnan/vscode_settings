@@ -241,7 +241,7 @@
     "when": "isInDiffEditor && !operationInProgress"
   },
   {
-    "key": "ctrl+/",
+    "key": "ctrl+f",
     "command": "workbench.action.findInFiles",
     "when": "editorFocus"
   },
@@ -583,10 +583,6 @@
     "when": "editorTextFocus && inDebugMode"
   },
   {
-    "key": "ctrl+f",
-    "command": "fuzzySearch.activeTextEditorWithCurrentSelection"
-  },
-  {
     "key": "ctrl+i",
     "command": "workbench.action.showAllSymbols"
   },
@@ -596,7 +592,7 @@
   },
   {
     "key": "ctrl+shift+i",
-    "command": "multiCommand.goToSymbolAndCategory"
+    "command": "commandChain.goToSymbolAndCategory"
   },
   {
     "key": "ctrl+/",
@@ -1164,12 +1160,12 @@
   },
   {
     "key": "ctrl+j",
-    "command": "multiCommand.pageDownAndCenter",
+    "command": "commandChain.pageDownAndCenter",
     "when": "editorTextFocus && !codeActionMenuVisible && !parameterHintsVisible && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+k",
-    "command": "multiCommand.pageUpAndCenter",
+    "command": "commandChain.pageUpAndCenter",
     "when": "editorTextFocus && !suggestWidgetVisible && !parameterHintsVisible && !codeActionMenuVisible"
   },
   {
