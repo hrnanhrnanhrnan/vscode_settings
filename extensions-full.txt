@@ -9,6 +9,9 @@ esbenp.prettier-vscode
 formulahendry.auto-rename-tag
 GitHub.github-vscode-theme
 GrapeCity.gc-excelviewer
+hrnan.command-chain
+hrnan.csharp-playground
+hrnan.focus-flip
 KevinRose.vsc-python-indent
 ms-dotnettools.csdevkit
 ms-dotnettools.csharp
@@ -20,15 +23,8 @@ njpwerner.autodocstring
 PKief.material-icon-theme
 rangav.vscode-thunder-client
 ritwickdey.LiveServer
-ryuta46.multi-command
 s-nlf-fh.glassit
 usernamehw.errorlens
 VisualStudioExptTeam.intellicode-api-usage-examples
 VisualStudioExptTeam.vscodeintellicode
 vscodevim.vim
-WallabyJs.console-ninja
-WallabyJs.quokka-vscode
-wholroyd.jinja
-jacobdufault.fuzzy-search
-yoavbls.pretty-ts-errors
-YomiTosh.livegrep
