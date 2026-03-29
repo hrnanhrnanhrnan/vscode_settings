@@ -139,7 +139,7 @@
     // },
   ],
   "vim.highlightedyank.enable": true,
-  "glassit.alpha": 250,
+  "glassit.alpha": 255,
   "diffEditor.ignoreTrimWhitespace": false,
   "vim.cursorStylePerMode.visual": "underline-thin",
   "vim.cursorStylePerMode.insert": "line-thin",
@@ -154,9 +154,9 @@
   "breadcrumbs.icons": false,
   "breadcrumbs.showArrays": false,
   "breadcrumbs.symbolPath": "off",
-  "multiCommand.commands": [
+  "commandChain.commands": [
     {
-      "command": "multiCommand.goToSymbolAndCategory",
+      "command": "commandChain.goToSymbolAndCategory",
       "sequence": [
         {
           "command": "workbench.action.gotoSymbol" // Öppnar "Go to Symbol in File"
@@ -170,7 +170,7 @@
       ]
     },
     {
-      "command": "multiCommand.pageDownAndCenter",
+      "command": "commandChain.pageDownAndCenter",
       "sequence": [
         {
           "command": "editorScroll",
@@ -190,7 +190,7 @@
       ]
     },
     {
-      "command": "multiCommand.pageUpAndCenter",
+      "command": "commandChain.pageUpAndCenter",
       "sequence": [
         {
           "command": "editorScroll",
@@ -213,7 +213,7 @@
   "workbench.editor.showTabs": "single",
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
-  "window.title": "🐱‍👤${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}${separator}${remoteName}",
+  "window.title": "↪ ${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}${separator}${remoteName}",
   "workbench.startupEditor": "none",
   "window.menuBarVisibility": "toggle",
   "debug.inlineValues": "on",
@@ -221,7 +221,6 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.sideBar.location": "right",
   "dotnet.server.useOmnisharp": true,
-  "workbench.colorTheme": "Catppuccin Mocha",
   "debug.onTaskErrors": "debugAnyway",
   "dotnet-test-explorer.enableTelemetry": false,
   "editor.scrollbar.vertical": "hidden",
@@ -236,7 +235,7 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.zoomLevel": -0.3,
+  "window.zoomLevel": -0.2,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -244,7 +243,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.accessibilitySupport": "off",
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "gitlens.codeLens.enabled": false,
   "dotnet.inlayHints.enableInlayHintsForParameters": true,
@@ -256,5 +255,13 @@
   "workbench.tree.indent": 20,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "codeToClipboard.excludePatterns": [
+    "*.lock",
+    "yarn.lock",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "composer.lock"
+  ],
+  "remote.autoForwardPortsSource": "hybrid"
 }
